@@ -41,7 +41,7 @@ class Cookies implements ParserContract
     public function parse(Request $request)
     {
         if ($this->decrypt && $request->hasCookie($this->key)) {
-            return Crypt::decrypt($request->cookie($this->key));
+            return Crypt::decrypt($request->cookie($this->key), false);
         }
 
         return $request->cookie($this->key);

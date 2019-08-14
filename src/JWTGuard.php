@@ -280,6 +280,16 @@ class JWTGuard implements Guard
     {
         return $this->getPayload();
     }
+    
+    /**
+     * Get the token.
+     *
+     * @return \Tymon\JWTAuth\Token|null
+     */
+    public function getToken()
+    {
+        return $this->jwt->getToken();
+    }
 
     /**
      * Set the token.
